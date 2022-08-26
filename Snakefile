@@ -4,7 +4,6 @@ rule all:
     input:
         expand("results/{sample}/plannotate.done", sample=STRAINS),
         expand("results/{sample}/reference.aln", sample=STRAINS),
-        expand("results/{sample}/clean.done", sample=STRAINS)
 
 rule filter:
     input:
@@ -68,17 +67,4 @@ rule annotate:
     shell:
         """
         plannotate batch -i {input} --html --output {params.outdir} --file_name pLasmid
-        """
-
-rule clean:
-    input:
-        fasta="results/{sample}/consensus.fasta"
-    output:
-        touch("results/{sample}/clean.done")
-    params:
-        outdir="data/{sample}"
-    shell:
-        """
-        rm data/*mmi
-        rm data/*fai
         """
