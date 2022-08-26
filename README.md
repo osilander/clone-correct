@@ -1,8 +1,10 @@
 # clone-correct
 Corrects plasmid sequences for unconfirmed clones using nanopore sequence and annotates
 
-First clone the repo, amke sure you're in a sensible directory:
+First clone the repo, make sure you're in a sensible directory:
+```
 git clone https://github.com/osilander/clone-correct.git
+```
 
 Open the data directory and replace the fastq file with fastq file(s) of your own. These need to be named with the suffix `.fastq`; the prefix will be used to name the result folders. Replace the reference `.fasta` file with the reference file that you wish to correct. This sequence can have any name, and is used to create an alignment of the new corrected (polished) sequence.
 

@@ -37,7 +37,7 @@ rule rename_fasta:
     params:
         fasta="results/{sample}/consensus.fasta",
         name=">{sample}"
-    shell: "sed -i 's/>*/{params.name}/' {params.fasta}"
+    shell: "sed -i 's/>.*/{params.name}/' {params.fasta}"
 
 rule align:
     input:
