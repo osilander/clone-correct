@@ -38,17 +38,14 @@ conda activate medaka
 mamba install -c bioconda medaka
 ```
 
-(6) install mafft:
+(6) install mafft, filtlong, plannotate:
 ```
 mamba install -c bioconda mafft
-```
-
-(7) install plannotate:
-```
+mamba intstall -c bioconda filtlong
 mamba install -c bioconda plannotate
 ```
 
-(8) First invoke dry-run of snakemake and then invoke snakemake with reports:
+(87 First invoke dry-run of snakemake to check the steps, then invoke `snakemake` then get a snakemake reports:
 ```
 snakemake -np
 ```
