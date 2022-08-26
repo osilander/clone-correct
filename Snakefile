@@ -68,3 +68,16 @@ rule annotate:
         """
         plannotate batch -i {input} --html --output {params.outdir} --file_name pLasmid
         """
+
+rule clean:
+    input:
+        fasta="results/{sample}/consensus.fasta"
+    output:
+        touch("results/{sample}/clean.done")
+    params:
+        outdir="data/{sample}"
+    shell:
+        """
+        rm data/*mmi
+        rm data/*fai
+        """
