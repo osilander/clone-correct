@@ -3,7 +3,8 @@ STRAINS, = glob_wildcards("data/{sample}.fastq")
 rule all:
     input:
         expand("results/{sample}/plannotate.done", sample=STRAINS),
-        expand("results/{sample}/reference.aln", sample=STRAINS)
+        expand("results/{sample}/reference.aln", sample=STRAINS),
+        expand("results/{sample}/clean.done", sample=STRAINS)
 
 rule filter:
     input:
