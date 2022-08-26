@@ -36,8 +36,8 @@ rule rename_fasta:
     output: touch("results/{sample}/rename.done")
     params:
         fasta="results/{sample}/consensus.fasta",
-        name="{sample}"
-    shell: "sed -i 's/reference/{params.name}/' {params.fasta}"
+        name=">{sample}"
+    shell: "sed -i 's/>*/{params.name}/' {params.fasta}"
 
 rule align:
     input:
@@ -55,6 +55,7 @@ rule align:
         echo -e "\n" >> tmp.fas
         cat {input.corrected} >> tmp.fas
         mafft tmp.fas > {output}
+        rm tmp.fas
         """
 
 rule annotate:
