@@ -14,6 +14,8 @@ Open the data directory and replace the fastq file with fastq file(s) of your ow
 
 The output of this should be a set of directories, one for each barcode. In each there will be an annotated `.gbk` file with the sequence and annotations of the corrected clone (`pLasmid_pLann.gbk`), an interactive `.html` file containing a plasmid map (`pLasmid_pLann.html`), an alignment of the reference and corrected sequence (ending in `.aln`), the new consensus sequence (`consensus.fasta`), and a few extraneous files that might be removed with a clean rule in future iterations. The step by step installations below will hopefully prevent system OS conflicts when using a `conda` `.yaml`.
 
+Please ignore the steps for which you already have the software installed.
+
 (1) install `conda`, see here https://docs.conda.io/en/latest/miniconda.html
 
 (2) install mamba:
