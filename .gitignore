@@ -1,6 +1,7 @@
 # various results files
 tmp.fas
 *.html
+.snakemake/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
