@@ -58,6 +58,7 @@ rule align:
         rm tmp.fas
         """
 
+
 rule annotate:
     input:
         fasta="results/{sample}/consensus.fasta"
